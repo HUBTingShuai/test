@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-bar">
+            <!--导航栏-->
+            <div id="logo">
+                <!--logo-->
+                <a href="index.html"></a>
+            </div>
+            <ul class="navbar nav-stacked">
+                <!--左侧导航栏-->
+                <li role="presentation"><a href="index.html">首页</a></li>
+                <li role="presentation" class="active">
+                    <a href="javascript:;"><b>夏季大减价</b></a>
+                    <ul class="level_2">
+                        <li><a href="/Spring_Summer_Sale/list.shtml">所有商品</a></li>
+                        <li><a href="/Spring_Summer_Sale/NewDrop_720_SSS/list.shtml">7.20新降</a></li>
+                        <li><a href="/Spring_Summer_Sale/NewDrop_713_SSS/list.shtml" style="color:#e00b0b;font-weight:bold;">7.13新降</a></li>
+                        <li><a href="/Spring_Summer_Sale/NewDrop_73_SSS/list.shtml">7.3新降</a></li>
+                        <li><a href="/Spring_Summer_Sale/NewDrop_627_SSS/list.shtml">6.27新降</a></li>
+                        <li><a href="/Spring_Summer_Sale/Dress_SSS/list.shtml">连衣裙</a></li>
+                        <li><a href="/Spring_Summer_Sale/Shirt_SSS/list.shtml">衬衫</a></li>
+                        <li><a href="/Spring_Summer_Sale/Tee_SSS/list.shtml">T恤</a></li>
+                        <li><a href="/Spring_Summer_Sale/Pant_SSS/list.shtml">裤子</a></li>
+                        <li><a href="/Spring_Summer_Sale/Skirt_SSS/list.shtml">半截裙</a></li>
+                        <li><a href="/Spring_Summer_Sale/Sweaters_SSS/list.shtml">毛织</a></li>
+                        <li><a href="/Spring_Summer_Sale/Coat_SSS/list.shtml">外套</a></li>
+                        <li><a href="/Spring_Summer_Sale/ACC_SSS/list.shtml">配饰</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="active">
+                    <a href="javascript:;"><b>多件多折</b></a>
+                    <ul class="level_2">
+                        <li><a href="/Many_Pieces_of_folding/list.shtml">所有商品</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Dress_MP/list.shtml">连衣裙</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Shirt_MP/list.shtml">衬衫</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Tee_MP/list.shtml">T恤</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Sweaters_MP/list.shtml">毛织</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Skirt_MP/list.shtml">半截裙</a></li>
+                        <li><a href="/Many_Pieces_of_folding/Pant_MP/list.shtml">裤子</a></li>
+                        <li><a href="/Many_Pieces_of_folding/ACC_MP/list.shtml">配饰</a></li>
+                    </ul>
+
+                </li>
+                <li role="presentation">
+                    <a href="javascript:;">新品</a>
+                    <ul class="level_2">
+                        <li><a href="/New_In/list.shtml">所有商品</a></li>
+                        <li><a href="/New_In/New_in_7_19/list.shtml">7月19日到店</a></li>
+                        <li><a href="/New_In/New_in_7_12/list.shtml">7月12日到店</a></li>
+                        <li><a href="/New_In/New_in_6_28/list.shtml">6月28日到店</a></li>
+                        <li><a href="/New_In/New_in_July/list.shtml">7月上市新品</a></li>
+                        <li><a href="/New_In/New_in_june/list.shtml">6月上市新品</a></li>
+                        <li><a href="/New_In/New_In_All/list.shtml">全部新品</a></li>
+                        <li><a href="/New_In/Upcoming/list.shtml">即将发售</a></li>
+                    </ul>
+                </li>
+                <li data-catalogid=3>
+                    <a href="javascript:;" data-href="/Clothing/list.shtml">服装</a>
+                    <ul class="level_2">
+                        <li data-catalogId=3><a href="/Clothing/list.shtml">所有商品</a></li>
+                        <li data-catalogId=6><a href="/Clothing/Dresses/list.shtml">连衣裙</a></li>
+                        <li data-catalogId=248><a href="/Clothing/Sweaters/list.shtml">毛织</a></li>
+                        <li data-catalogId=246><a href="/Clothing/T_Shirts/list.shtml">T恤</a></li>
+                        <li data-catalogId=5><a href="/Clothing/Shirts/list.shtml">衬衫</a></li>
+                        <li data-catalogId=4><a href="/Clothing/Skirts/list.shtml">半截裙</a></li>
+                        <li data-catalogId=247><a href="/Clothing/Pants/list.shtml">裤装</a></li>
+                        <li data-catalogId=249><a href="/Clothing/Jakets/list.shtml">外套</a></li>
+                    </ul>
+                </li>
+                <li data-catalogid=2 24>
+                    <a href="javascript:;" data-href="/Accessories/list.shtml">配饰</a>
+                    <ul class="level_2">
+                        <li data-catalogId=2 24><a href="/Accessories/list.shtml">所有商品</a></li>
+                        <li data-catalogId=254><a href="/Accessories/Bags/list.shtml">包</a></li>
+                        <li data-catalogId=255><a href="/Accessories/Shoes/list.shtml">鞋</a></li>
+                        <li data-catalogId=256><a href="/Accessories/Belts/list.shtml">腰带</a></li>
+                        <li data-catalogId=257><a href="/Accessories/Scarfs/list.shtml">围巾</a></li>
+                        <li data-catalogId=258><a href="/Accessories/Jewelry/list.shtml">首饰</a></li>
+                        <li data-catalogId=259><a href="/Accessories/Tights/list.shtml">袜子</a></li>
+                        <li data-catalogId=260><a href="/Accessories/Hats/list.shtml">帽子</a></li>
+                        <li data-catalogId=261><a href="/Accessories/Gifts/list.shtml">赠品</a></li>
+                    </ul>
+                </li>
+                <li data-catalogid=2 430>
+                    <a href="javascript:;" data-href="/SALE/list.shtml">促销</a>
+                    <ul class="level_2">
+                        <li data-catalogId=2 430><a href="/SALE/list.shtml">所有商品</a></li>
+                        <li data-catalogId=3256><a href="/SALE/Sale_7_12/list.shtml">7月12日优惠尝新</a></li>
+                        <li data-catalogId=3248><a href="/SALE/Sale_7_5/list.shtml">7月5日优惠尝新</a></li>
+                        <li data-catalogId=2431><a href="/SALE/Dress_sale/list.shtml">连衣裙</a></li>
+                        <li data-catalogId=2433><a href="/SALE/Shirt_sale/list.shtml">衬衫</a></li>
+                        <li data-catalogId=2435><a href="/SALE/Tee_sale/list.shtml">T恤</a></li>
+                        <li data-catalogId=2437><a href="/SALE/Skirt_sale/list.shtml">半截裙</a></li>
+                        <li data-catalogId=2439><a href="/SALE/Pant_sale/list.shtml">裤装</a></li>
+                        <li data-catalogId=2441><a href="/SALE/Sweaters_Sale/list.shtml">毛织</a></li>
+                        <li data-catalogId=2443><a href="/SALE/Coat_sale/list.shtml">外套</a></li>
+                        <li data-catalogId=2445><a href="/SALE/Woolen_sale/list.shtml">呢料外套</a></li>
+                        <li data-catalogId=2451><a href="/SALE/Acc_sale/list.shtml">配饰</a></li>
+                    </ul>
+                </li>
+                <li role="presentation"><a href="#">潮流新宠</a></li>
+                <li role="presentation"><a href="#">人气新选</a></li>
+                <li role="presentation"><a href="#">会员俱乐部</a></li>
+                <li role="presentation"><a href="#">积分商城</a></li>
+            </ul>
+        </nav>
+        <!--右侧导航栏  fa-inverse -->
+        <div id="rightLine" class="list-group">
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-user fa-fw"></i>
+                <i class="fa-text">我的账户</i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-edit fa-fw"></i>
+                <i class="fa-text">签到送积分</i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-shopping-bag fa-fw"><span class="bagIndex">0</span></i>
+                <i class="fa-text">购物袋</i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-heart fa-fw"></i>
+                <i class="fa-text">我的收藏</i>
+            </a>
+            <a class="icon-Awesome">
+                <i class="fa fa-2x fa-search fa-fw" id="search"></i>
+                <input class="fa-text" id="searchInput" type="text" name="search" placeholder="搜索您感兴趣的内容">
+                <i class="fa fa-1x fa-arrow-right button"></i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-commenting-o fa-fw  fa-flip-horizontal"></i>
+                <i class="fa-text">在线客服</i>
+            </a>
+        </div>
+    </header>
+    <main class="single_main clearfix">
+        <div class="content clearfix">
+            <div class="picshow FLeft">
+                <ul class="linetwo clearfix">
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_1.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_2.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_3.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_4.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+                <p class="text">细节展示</p>
+                <ul class="linethree clearfix">
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_5.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_6.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <img src="images/product_INF/1JH2084040090_m_7.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+                <p class="text"></p>
+                <ul class="lineone">
+                    <li>
+                        <div id="zoomWrap" class="zoom_wrap">
+                            <div id="middleImg" class="middle_img">
+                                <img src="images/product_INF/1JH2084040090_b_8.jpg" alt="">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ShopINF FLeft">
+                <div class="inner">
+                    <p class="title">系带印花雪纺连衣裙</p>
+                    <p class="number">编号 1XXXX0XXXX0X0X</p>
+                    <!--后台引入价格-->
+                    <p class="price">
+                        <em>￥449 <del>￥899</del></em>
+                    </p>
+                    <div class="color clearfix" id="proColor">
+                        <a href="javascript:;" class="item active">
+                            <div class="pic">
+                                <img src="images/product_INF/1JH2084040090_list_2.jpg" alt="">
+                            </div>
+                            <div class="arrow">
+                                <i class="fa fa-1x fa-chevron-down"></i>
+                                <p>黑色</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pro_sell_out none" id="proSellOut">
+                        <p id="proSellOutTxt">该商品已售罄</p>
+                        <a class="buynow FLeft" href="javascript:;" target="_blank" id="btnSellOut">到货通知</a>
+                    </div>
+                    <div class="detail">
+                        <ul class="tab">
+                            <li class="li1">商品描述</li>
+                            <li class="li2">产品保养</li>
+                        </ul>
+                    </div>
+                    <div class="size" id="proSizeChoose">
+                        <div class="hd">尺码</div>
+                        <div id="groupChooseSize" class="groupChooseSize clearfix">
+                            <a href="javascript:;" class="btn_size_dis">XS(155/80A)</a>
+                            <a href="javascript:;" class="btn_size_able">S(160/84A)</a>
+                            <span id="linkRule" class="link_rule">尺码表(点击查看)</span>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <div id="proBtnBox">
+                            <div class="clearfix">
+                                <button id="btnOrderOneKey" class="buynow FLeft">一键购买</button>
+                                <button id="btnOrderWish" class="collect FLeft"></button>
+                            </div>
+                            <button id="btnOrderBuy" class="addbag">加入购物袋</button>
+                        </div>
+                        <div class="style">
+                            <a href="javascript:;" onclick="te$.system.shareToSNS('sina', document.location.href, '系带印花雪纺连衣裙，我很喜欢系带印花雪纺连衣裙，和大家一起分享');" class="sina"></a>
+                            <a href="javascript:;" onclick="te$.system.shareToSNS('qq', document.location.href, '系带印花雪纺连衣裙，我很喜欢系带印花雪纺连衣裙，和大家一起分享');" class="tengxun"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--返回顶部-->
+        <a href="javascript:;" onclick="$('body,html').animate({ scrollTop: 0 }, 200);" id="toTop"></a>
+        <div class="msg_info" id="sizeInfo">
+            <div class="msg_info_tit"><span>尺码参考</span><em class="info_close" onclick="$('#sizeInfo').css('display','none')">关闭</em></div>
+            <div class="msg_info_con">
+                <table>
+                    <tr class="title_bg">
+                        <td>尺码</td>
+                        <td>上身长/全长</td>
+                        <td>肩宽</td>
+                        <td>胸围</td>
+                        <td>裤长/袖长</td>
+                        <td>腰围</td>
+                        <td>臀围</td>
+                        <td>脚口围/摆围</td>
+                    </tr>
+                    <tr>
+                        <td>XS</td>
+                        <td>110.0</td>
+                        <td>37.0</td>
+                        <td>82.0</td>
+                        <td>56.0</td>
+                        <td>66.0</td>
+                        <td>-</td>
+                        <td>164.0</td>
+                    </tr>
+                    <tr class="han_hui">
+                        <td>S</td>
+                        <td>113.0</td>
+                        <td>38.0</td>
+                        <td>85.0</td>
+                        <td>57.0</td>
+                        <td>69.0</td>
+                        <td>-</td>
+                        <td>169.0</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>116.0</td>
+                        <td>39.0</td>
+                        <td>88.0</td>
+                        <td>58.0</td>
+                        <td>72.0</td>
+                        <td>-</td>
+                        <td>173.0</td>
+                    </tr>
+                    <tr class="han_hui">
+                        <td>L</td>
+                        <td>119.0</td>
+                        <td>40.0</td>
+                        <td>91.0</td>
+                        <td>59.0</td>
+                        <td>75.0</td>
+                        <td>-</td>
+                        <td>178.0</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>122.0</td>
+                        <td>41.0</td>
+                        <td>95.0</td>
+                        <td>59.0</td>
+                        <td>79.0</td>
+                        <td>-</td>
+                        <td>184.0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="infoModal" class="info_modal">
+            <div class="hd">
+                <h5>信息</h5>
+                <em class="close_info_modal" onclick="$('#infoModal').css('display','none')"></em>
+            </div>
+            <div class="ul_wrap" id="detailContent1">
+                <ul>
+                    <li>
+                        <h5>Tips</h5>
+                        <p>印花面料随机裁剪，实物图案位置与图片中的可能稍有不同，请以收到的实物为准。</p>
+                    </li>
+                    <li>
+                        <h5>面料成分</h5>
+                        <p>面料:聚酯纤维100% 里料:聚酯纤维100% 腰带:锦纶100%
+                        </p>
+                    </li>
+                    <li>
+                        <h5>纤维含量小知识</h5>
+                        <p>产品或产品的某一部分含有2种及以上的纤维时，除了许可不标注的纤维外，在标签上标明的每一种纤维含量允许偏差为5%，填充物的允许偏差为10%.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="ul_wrap" id="detailContent2">
+                <ul>
+                    <li>
+                        <h5>版型</h5>
+                        <p>合体</p>
+                    </li>
+                    <li>
+                        <h5>长度</h5>
+                        <p>7-8分长</p>
+                    </li>
+                    <li>
+                        <h5>洗涤</h5>
+                        <p id="washedImg">30℃以下网袋机洗 不可漂白 悬挂晾干 低温熨烫 不可干洗 不可曝晒 反面洗涤 请勿浸泡 请扣合好后与同类颜色衣物洗涤 腰带需分开作单独洗涤
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="links clearfix">
+                <div class="footer-content footer-content1">
+                    <div class="footer-header">SERVICE</div>
+                    <ul>
+                        <li>
+                            <a href="">购物流程</a>
+                        </li>
+                        <li>
+                            <a href="">退换货流程</a>
+                        </li>
+                        <li>
+                            <a href="">配送说明</a>
+                        </li>
+                        <li>
+                            <a href="">在线客服</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content footer-content2">
+                    <div class="footer-header">CONTACT US</div>
+                    <ul>
+                        <li>
+                            <a href="">TRENDY GLOBAL</a>
+                        </li>
+                        <li>
+                            <a href="">微信公众号</a>
+                        </li>
+                        <li>
+                            <a href="">官方购物APP</a>
+                        </li>
+                        <li>
+                            <span href="">热线：400-880-0086</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-content footer-content3">
+                    <div class="footer-header">INFORMATION</div>
+                    <ul>
+                        <li>
+                            <a href="">LOOKBOOK</a>
+                        </li>
+                        <li>
+                            <a href="">隐私保护</a>
+                        </li>
+                    </ul>
+                    <div class="footer-content3-gz">
+                        <span>关注：</span>
+                        <a href="http://e.weibo.com/3243241321" class="footer-icon weibo"></a>
+                        <a href="http://tieba.baidu.com/" class="footer-icon tieba"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copy">
+                Copyright @ 2010-2016 广州尚岑服饰有限公司版权所有
+                <span>增值电信业务经营许可证 
+                    <a target="_blank" id="linkIcp" href="http://www.miibeian.gov.cn/">粤B2-20100553 粤ICP备10229258-1号</a>
+                    </span>
+                <span>
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602001995" target="_blank">
+                            <img src="http://img2.misssixty.com.cn/material/2016/10/31/20161031164826771.png"> <br/>粤公网安备 44010602001995号
+                        </a>
+                </span>
+                <span class="link_ochirlyonline_bn" style="display:none">
+                        <a target="_blank" href="http://www.miibeian.gov.cn/">粤ICP备11010295号-2</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+    <button id="changeShop">切换商品售空</button>
+    <script>
+        $(document).ready(function() {
+            $('#changeShop').click(function() {
+                $('#proSellOut').css('display', 'block');
+                $('#proColor').css('display', 'none');
+                $('#proSizeChoose').css('display', 'none');
+                $('.action').css('display', 'none');
+            });
+            $('#zoomWrap').zoom();
+        });
+
+    </script>
+</body>
+
+</html>

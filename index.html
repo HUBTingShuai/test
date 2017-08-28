@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.fullPage.min.js" class="fullpage"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/index.js"></script>
+    <script class="fullPage">
+        $(function() {
+            //            $('main').hide();
+            //            $('footer').hide();
+
+// // 计时器--滑动按钮定时滑动 // time(); // var Timeopen; // // function time() { // Timeopen = setInterval(run, '300'); // }; // // function run() { // $('.index_down').fadeToggle(300, time); // }; // $('.index_down').click(function() { // scrollTo('#page4', 300); // }); 
+            $('#Background_img').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+                menu: '#menu',
+                css3: 'false',
+                scrollingSpeed: '300',
+                //                scrollOverflow: 'true',
+                afterLoad: function(anchorLink, index) { //页面的锚链接，页面序号.当滚动完成后返回数据 
+                    //                    console.log("anchorLink" + anchorLink + "index" + index);
+                },
+                onLeave: function(index, nextIndex, direction) {
+                    //滚动之前的页面序号，滚动后的页面序号，滚动的方向。滚动前先返回数据 
+                    //                    console.log("index " + index + "nextIndex " + nextIndex + "direction " + direction);
+                    if (index == 4 && direction == 'down') {
+                        $(document.body).css({
+                            "overflow-y": "auto"
+                        });
+                        $('main').show();
+                        $('footer').show();
+                        $.fn.fullpage.setAllowScrolling(false, 'up');
+                        $('#menu').hide();
+
+
+                    } else if (index == 5 && direction == 'up') {
+                        $('body').css('overflow', 'hidden');
+                    }
+                    var i = 0,
+                        j = 0;
+                    $('.section5').unbind('mousewheel').bind('mousewheel', function(event, delta) {
+
+                        var dir = delta > 0 ? 'Up' : 'Down';
+                        if (dir == 'Up') {
+                            //                            $.fn.fullpage.setAllowScrolling(true, 'up');
+                            i++;
+                            if (i == j + 5) {
+                                $.fn.fullpage.setAllowScrolling(true, 'up');
+                                $('.index_down').show();
+                                $('#menu').show();
+                                j = 0;
+                                i = 0;
+                            }
+                        } else {
+                            j++;
+                        }
+                        return true;
+                    });
+                },
+                afterRender: function() {
+                    //页面载入完成后返回，其他的回调方法全部在这个方法回调完成后回调 
+                    //                    console.log("afterRender");
+                },
+            });
+
+
+            // console.log($('body').class); // if ($('body').Class == 'fp-viewing-page4') { // $('body').css('overflow', 'scroll'); // }
+            // $('.section5').height(200); // $('#Background_img').height($(window).height());
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-bar">
+            <!--导航栏-->
+            <div id="logo">
+                <!--logo-->
+                <a href="index.html"></a>
+            </div>
+            <ul class="navbar nav-stacked">
+                <!--左侧导航栏-->
+                <li role="presentation"><a href="index.html">首页</a></li>
+                <li role="presentation" class="active"><a href="newShop.html"><b>夏季大减价</b></a></li>
+                <li role="presentation" class="active"><a href="newShop.html"><b>多件多折</b></a></li>
+                <li role="presentation"><a href="newShop.html">新品</a></li>
+                <li role="presentation"><a href="newShop.html">服装</a></li>
+                <li role="presentation"><a href="newShop.html">配饰</a></li>
+                <li role="presentation"><a href="newShop.html">促销</a></li>
+                <li role="presentation"><a href="newShop.html">潮流新宠</a></li>
+                <li role="presentation"><a href="newShop.html">人气新选</a></li>
+                <li role="presentation"><a href="#">会员俱乐部</a></li>
+                <li role="presentation"><a href="#">积分商城</a></li>
+            </ul>
+        </nav>
+        <!--右侧导航栏  fa-inverse -->
+        <div id="rightLine" class="list-group">
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-user fa-fw"></i>
+                <i class="fa-text">我的账户</i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-edit fa-fw"></i>
+                <i class="fa-text">签到送积分</i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-shopping-bag fa-fw"><span class="bagIndex">0</span></i>
+                <i class="fa-text">购物袋</i>
+
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-heart fa-fw"></i>
+                <i class="fa-text">我的收藏</i>
+            </a>
+            <a class="icon-Awesome">
+                <i class="fa fa-2x fa-search fa-fw" id="search"></i>
+                <input class="fa-text" id="searchInput" type="text" name="search" placeholder="搜索您感兴趣的内容">
+                <i class="fa fa-1x fa-arrow-right button"></i>
+            </a>
+            <a class="icon-Awesome" href="">
+                <i class="fa fa-2x fa-commenting-o fa-fw  fa-flip-horizontal"></i>
+                <i class="fa-text">在线客服</i>
+            </a>
+        </div>
+        <!--点击滑动到main-->
+<!--
+<a class="index_down" href="#Background_img">
+    <p>滚动</p>
+    <img src="images/down.png" alt="">
+</a>
+-->
+        <ul id="menu">
+            <!--左下角小圆点-->
+            <li data-menuanchor="page1" class="active">
+                <a href="#page1"></a><i>7.13新降</i></li>
+            <li data-menuanchor="page2">
+                <a href="#page2"></a><i>多件多折</i></li>
+            <li data-menuanchor="page3">
+                <a href="#page3"></a><i>夏季大减价</i></li>
+            <li data-menuanchor="page4">
+                <a href="#page4"></a><i>NEW IN</i></li>
+        </ul>
+        <div id="Background_img">
+            <!--
+            鼠标滑动轮播图
+            ps:如果想添加或删除图片，直接复制或删除div.section
+            -->
+            <div class="section section1"></div>
+            <div class="section section2"></div>
+            <div class="section section3"></div>
+            <div class="section section4"></div>
+            <div class="section fp-auto-height section5">
+                <main class="main1 clearfix" id="main1">
+                    <div class="main clearfix">
+                        <div class="content-hover content-big">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/1.jpg" alt="">
+                                <img class="sub_img" src="images/index-main/11.png" style="width: auto" />
+                                <!--hover文字图-->
+                                <span class="border_bottom"></span>
+                                <span class="black_lay"></span>
+                            </a>
+                        </div>
+                        <div class="content-small">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/2.jpg" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="main clearfix">
+                        <div class="content-small">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="content-hover content-big">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/4.jpg" alt="">
+                                <img class="sub_img" src="images/index-main/11.png" style="width: auto" />
+                                <!--hover文字图-->
+                                <span class="border_bottom"></span>
+                                <span class="black_lay"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main clearfix">
+                        <div class="content-hover content-big">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/5.jpg" alt="">
+                                <img class="sub_img" src="images/index-main/11.png" style="width: auto" />
+                                <!--hover文字图-->
+                                <span class="border_bottom"></span>
+                                <span class="black_lay"></span>
+                            </a>
+                        </div>
+                        <div class="content-small">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/6.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main content-video">
+                        <img src="images/index-main/7.jpg" alt="" id="video-img">
+                        <div class="content-big">
+                            <a href="#">
+                                <img class="BImg" src="images/index-main/8.jpg" alt="">
+
+                            </a>
+                        </div>
+                        <div class="content-hover content-small">
+                            <a href="#">
+                                <img src="images/index-main/9.jpg" alt="">
+                                <img class="sub_img" src="images/index-main/11.png" style="width: auto" />
+                                <!--hover文字图-->
+                                <span class="border_bottom"></span>
+                                <span class="black_lay"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </main>
+                <footer>
+                    <div class="footer">
+                        <div class="links clearfix">
+                            <div class="footer-content footer-content1">
+                                <div class="footer-header">SERVICE</div>
+                                <ul>
+                                    <li>
+                                        <a href="">购物流程</a>
+                                    </li>
+                                    <li>
+                                        <a href="">退换货流程</a>
+                                    </li>
+                                    <li>
+                                        <a href="">配送说明</a>
+                                    </li>
+                                    <li>
+                                        <a href="">在线客服</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-content footer-content2">
+                                <div class="footer-header">CONTACT US</div>
+                                <ul>
+                                    <li>
+                                        <a href="">TRENDY GLOBAL</a>
+                                    </li>
+                                    <li>
+                                        <a href="">微信公众号</a>
+                                    </li>
+                                    <li>
+                                        <a href="">官方购物APP</a>
+                                    </li>
+                                    <li>
+                                        <span href="">热线：400-880-0086</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-content footer-content3">
+                                <div class="footer-header">INFORMATION</div>
+                                <ul>
+                                    <li>
+                                        <a href="">LOOKBOOK</a>
+                                    </li>
+                                    <li>
+                                        <a href="">隐私保护</a>
+                                    </li>
+                                </ul>
+                                <div class="footer-content3-gz">
+                                    <span>关注：</span>
+                                    <a href="http://e.weibo.com/3243241321" class="footer-icon weibo"></a>
+                                    <a href="http://tieba.baidu.com/" class="footer-icon tieba"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="copy">
+                            Copyright @ 2010-2016 广州尚岑服饰有限公司版权所有
+                            <span>增值电信业务经营许可证 
+                    <a target="_blank" id="linkIcp" href="http://www.miibeian.gov.cn/">粤B2-20100553 粤ICP备10229258-1号</a>
+                    </span>
+                            <span>
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602001995" target="_blank">
+                            <img src="http://img2.misssixty.com.cn/material/2016/10/31/20161031164826771.png"> <br/>粤公网安备 44010602001995号
+                        </a>
+                </span>
+                            <span class="link_ochirlyonline_bn" style="display:none">
+                        <a target="_blank" href="http://www.miibeian.gov.cn/">粤ICP备11010295号-2</a>
+                </span>
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </header>
+    <!--返回顶部-->
+    <a href="#Background_img" id="toTop"></a>
+
+</body>
+
+</html>
